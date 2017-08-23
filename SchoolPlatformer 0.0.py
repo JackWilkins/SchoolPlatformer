@@ -33,7 +33,7 @@ class Player1(pygame.sprite.Sprie):
             else:
                 self.rect.left = block,rect.right
         self.rect.y +- self.change_y
-        block_hit_list = pygame.sprite.spritecollide(slef,nWall,False)
+        block_hit_list = pygame.sprite.spritecollide(self,nWall,False)
         for block in block_hit_list:
             if self.change_y > 0:
                 self.rect.bottom = block.rect.top
