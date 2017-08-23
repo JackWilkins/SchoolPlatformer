@@ -6,19 +6,19 @@ green = (0,255,0)
 
 class Wall(pygame.sprite.Sprite):
     def __init__(self,x,y,width,height):
-        pygame.sprite.Sprite.__Init__(self)
+        pygame.sprite.Sprite.__init__(self)
         self.image = pygame.Surface([width,height])
         self.image.fill(green)
         self.rect = self.image.get_rect()
         self.rect.y = y
         self.rect.x = x
 
-class Player(pygame.sprite.Sprie):
+class Player(pygame.sprite.Sprite):
     change_x = 0
     change_y = 0
     def __init__(self,x,y):
-        pygame.sprite.Sprite.__Init__(self)
-        self.image = self.image.get_rect()
+        pygame.sprite.Sprite.__init__(self)
+        self.rect = self.image.get_rect()
         self.rect.y = y
         self.rect.x = x
     def changespeed(self,x,y):
@@ -46,9 +46,6 @@ pygame.init()
 screen = pygame.display.set_mode([1024,768])
 screen = pygame.display.set_caption('Platformer')
 
-background = pygame.Surface(screen.get_size())
-background = background.convert()
-background.fill(white)
 
 player = Player(30,30)
 
@@ -61,7 +58,7 @@ wall_list.add(wall)
 all_sprite_list.add(wall)
 
 wall = Wall(15,0,1009,15)
-wall_list.add.(wall)
+wall_list.add(wall)
 all_sprite_list.add(wall)
 
 clock = pygame.time.Clock()
