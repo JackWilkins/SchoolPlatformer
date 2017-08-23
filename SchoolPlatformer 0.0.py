@@ -68,6 +68,36 @@ clock = pygame.time.Clock()
 
 done = False
 
+while not done:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            done = True
+        elif event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_LEFT:
+                player.changespeed(-3,0)
+            elif event.key == pygame.K_RIGHT:
+                player.changespeed(3,0)
+            elif event.key == pygame.K_UP:
+                player.changespeed(0,3)
+            elif event.key == pygame.K_DOWN:
+                player.changespeed(0,-3)
+
+    player.update(wall_list)
+
+    screen.fill(white)
+    all_sprite_list.draw(screen)
+    pygame.display.flip()
+
+    clock.tick(60)
+
+pygame.quit()
+
+    
+                
+            
+                
+                
+
 
 
 
